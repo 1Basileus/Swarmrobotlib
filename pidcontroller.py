@@ -1,5 +1,4 @@
 import math
-from .swarmrobot import SwarmRobot
 
 class PIDController:
     # PID constants
