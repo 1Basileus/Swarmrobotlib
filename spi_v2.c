@@ -357,7 +357,7 @@ static PyMethodDef SpiMethods[] =
 PyMODINIT_FUNC
 
 #if PY_MAJOR_VERSION >= 3
-PyInit_spi(void)
+PyInit_spiv2(void)
 #else
 initspiv2(void)
 #endif

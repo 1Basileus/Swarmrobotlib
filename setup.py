@@ -3,7 +3,7 @@ from distutils.core import setup, Extension
 module1 = Extension('spiv2', sources = ['spi_v2.c'])
 
 setup (
-    name = 'Jet-SPI',
+    name = 'spiv2',
     author='Jannik Beibl',
     url='',
     download_url='',

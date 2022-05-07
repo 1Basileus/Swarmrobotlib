@@ -4,7 +4,7 @@ import time
 
 from crccheck.crc import Crc16
 
-reload(spi)
+#reload(spi)
 
 DEVICE_ADDRESS = 0x01
 
