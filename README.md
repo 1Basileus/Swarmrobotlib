@@ -50,7 +50,7 @@ Move motor on Port 1 for 360 steps at 50% power.
 from jetboard import Jetboard
 
 jb = Jetboard()
-jb.set_motor_position(jb.PORT_1, 360, 50)
+jb.set_motor_steps(jb.PORT_1, 360, 50)
 ```
 
 Get the current position of motor on Port 1.
