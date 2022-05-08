@@ -86,6 +86,13 @@ class Jetboard(object):
 		speedBinary = (255 / 100) * speed
 		self.spi_send(SET_MOTOR_POS_STEP, motor, steps, speedBinary)
 
+	def set_motor_position(self, motor, position):
+		"""
+		Moves a specific motor to the specified position.
+		"""
+		steps = position - self.get_motor_position(motor)
+		self.set_motor_steps(motor, steps, 100)
+
 	def get_motor_position(self, motor):
 		"""
 		Gets the current position of a specific motor.
@@ -158,6 +165,7 @@ class Jetboard(object):
 		"""
 
 		# Construct the data stream
+		value = int(value)
 		data_out = [DEVICE_ADDRESS, message, target, value >> 8, value & 0xff, option]
 
 		# Calculate the CRC checksum of the command

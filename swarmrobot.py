@@ -23,10 +23,7 @@ class SwarmRobot:
     def __del__(self):
         self._steer_motor.to_init_position()
         self.stop_all()
-
-    def change_drive_power(self, pnew):
-        self._drive_motor.change_power(pnew)
-
+        
     def set_drive_power(self, pnew):
         self._drive_motor.set_power(pnew)
 
