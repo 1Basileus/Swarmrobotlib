@@ -1,5 +1,5 @@
 class Motor:
-    _board = BrickPi3()
+    #_board = BrickPi3()
     STATUS_POWER = 1
 
     def __init__(self, port, legacy = False):
@@ -61,7 +61,7 @@ class CalibratedMotor(Motor):
             if self._legacy:
                 encnow = self._board.get_motor_encoder(self._port)
             else:
-                encnow = self._board.get_motorposition(self._port)
+                encnow = self._board.get_motor_position(self._port)
         self._pmin = encnow
         self.set_power(0)
         if verbose: print('pmin = {}', self._pmin)

@@ -90,8 +90,11 @@ class Jetboard(object):
 		"""
 		Moves a specific motor to the specified position.
 		"""
-		steps = position - self.get_motor_position(motor)
-		self.set_motor_steps(motor, steps, 100)
+		steps = self.get_motor_position(motor) - position
+		print("pos: ",self.get_motor_position(motor))
+		print("wanted: ",position)
+		print("steps to go: ",steps)
+		self.set_motor_steps(motor, steps, 80)
 
 	def get_motor_position(self, motor):
 		"""
@@ -165,7 +168,13 @@ class Jetboard(object):
 		"""
 
 		# Construct the data stream
+		print(value)
+		print(option)
 		value = int(value)
+		option = int(option)
+		print(value)
+		print(option)
+		print()
 		data_out = [DEVICE_ADDRESS, message, target, value >> 8, value & 0xff, option]
 
 		# Calculate the CRC checksum of the command
